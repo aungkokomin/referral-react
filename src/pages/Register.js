@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext'; // Add this
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ function Register() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth(); // Add this
 
   const handleChange = (e) => {
     setFormData({
@@ -51,9 +53,8 @@ function Register() {
         throw new Error(data.message || 'Registration failed');
       }
 
-      // Save token to localStorage
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+      // Use AuthContext login function
+      login(data.token, data.user); // Changed this line
 
       // Redirect to dashboard
       navigate('/');

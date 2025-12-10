@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import AdminRoute from './components/AdminRoute';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
@@ -50,9 +51,11 @@ function App() {
             path="/users"
             element={
               <ProtectedRoute>
-                <DashboardLayout>
-                  <Users />
-                </DashboardLayout>
+                <AdminRoute>
+                  <DashboardLayout>
+                    <Users />
+                  </DashboardLayout>
+                </AdminRoute>
               </ProtectedRoute>
             }
           />
