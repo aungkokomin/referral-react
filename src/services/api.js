@@ -83,10 +83,14 @@ export const api = {
     method: 'DELETE',
   }),
 
-  // Get dashboard stats (example)
+  // Get dashboard stats
   getDashboardStats: () => apiCall('/dashboard'),
   
-  // Add more API endpoints as needed
+  // Get commission logs
+  getCommissionLogs: () => apiCall('/commission-logs'),
+  
+  // Get user referrals
+  validateReferralCode: (referralCode) => apiCall(`/auth/check-referral-valid?ref=${referralCode}`),
 };
 
 export default api;

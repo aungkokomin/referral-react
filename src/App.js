@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Users from './pages/Users';
 import Settings from './pages/Settings';
+import CommissionsLogs from './pages/CommissionsLogs';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import './App.css';
@@ -60,6 +61,16 @@ function App() {
             }
           />
           <Route
+            path="/commissions-logs"
+            element={
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <CommissionsLogs />
+                </DashboardLayout>
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/settings"
             element={
               <ProtectedRoute>
@@ -71,6 +82,7 @@ function App() {
           />
 
           {/* Redirect any unknown routes to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>

@@ -32,6 +32,13 @@ function Sidebar() {
             Users
           </NavLink>
         )}
+
+        <NavLink to='/commissions-logs' className={navLinkClass}>
+          <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 14l6-6m0 0l-6-6m6 6H3m13 0h5m-5 0v5m0-5V4" />
+          </svg>
+          Commissions Logs
+        </NavLink>
         
         <NavLink to="/settings" className={navLinkClass}>
           <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

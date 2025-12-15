@@ -36,20 +36,12 @@ export const AuthProvider = ({ children }) => {
 
   // Check if user is admin
   const isAdmin = () => {
-    console.log('Checking admin for user:', user);
-    if (!user) return false;
-    if (!user.roles) return false;
-    return user.roles?.some(role => 
-      role.role?.name === 'admin' || role.name === 'admin'
-    );
+    return user?.roles?.includes('admin') ?? false;
   };
 
   // Check if user has a specific role
   const hasRole = (roleName) => {
-    if (!user) return false;
-    return user.roles?.some(role => 
-      role.role?.name === roleName || role.name === roleName
-    );
+    return user?.roles?.includes(roleName) ?? false;
   };
 
   const value = {
