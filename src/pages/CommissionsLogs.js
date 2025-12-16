@@ -102,13 +102,13 @@ function CommissionsLogs() {
                     {index + 1}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {log.user?.name ?? 'N/A'}
+                    {log.referee?.name ?? 'N/A'}
                   </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {log.user?.email ?? 'N/A'}
+                      {log.referee?.email ?? 'N/A'}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {log.user?.referral_uuid ?? 'N/A'}
+                      {log.referee?.referral_uuid ?? 'N/A'}
                     </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     ${log.amount ?? 0}

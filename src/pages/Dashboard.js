@@ -60,7 +60,7 @@ function Dashboard() {
                     <div className="flex items-center justify-between">
                     <div>
                         <p className="text-gray-500 text-sm">Total Referrals</p>
-                        <p className="text-2xl font-bold text-gray-800">{stats.referralsCount ?? 0}</p>
+                        <p className="text-2xl font-bold text-gray-800">{stats.refereeCount ?? 0}</p>
                     </div>
                     <div className="bg-green-100 p-3 rounded-full">
                         <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ function Dashboard() {
                     <div className="flex items-center justify-between">
                     <div>
                         <p className="text-gray-500 text-sm">Revenue</p>
-                        <p className="text-2xl font-bold text-gray-800">${stats.revenue ?? 0}</p>
+                        <p className="text-2xl font-bold text-gray-800">${stats.totalCommissions ?? 0}</p>
                     </div>
                     <div className="bg-purple-100 p-3 rounded-full">
                         <svg className="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
